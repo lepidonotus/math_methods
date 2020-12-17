@@ -49,6 +49,7 @@ while True:
 
 A = []
 B = []
+z = []
 
 for i in range(repeats):
     while True:
@@ -67,25 +68,13 @@ for i in range(repeats):
             print ('Основание степени должно быть числом.')
             continue
     B.append(b)
-
-z = []
-for pow_arg in A:
-    row = []
-    for degree in B:
-        y = calculate_expression(degree, pow_arg)
-        print(y)
-        row.append(y)
-    z.append(row)
-
-Z = np.array(z)
-print(Z.ndim)
-
-X, Y = np.meshgrid(B, A)
+    y = calculate_expression(a, b)
+    print(y)
+    z.append(y)
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                       linewidth=0, antialiased=False)
+ax.plot(A, B, z, label='График')
 
 plt.show()
 

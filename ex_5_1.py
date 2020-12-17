@@ -47,7 +47,9 @@ generator1 = [3 + 0.5 * i for i in range(5)]
 Y = []
 for pow_arg in generator1:
     y = calculate_expression(pow_arg)
-    print(y)
+    print('pow_arg = ', pow_arg)
+    print('y = ', y)
+    print('***')
     Y.append(y)
 
 plt.plot(generator1, Y)

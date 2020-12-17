@@ -44,7 +44,9 @@ for pow_arg in generator1:
     row = []
     for degree in generator2:
         y = calculate_expression(degree, pow_arg)
-        print(y)
+        print('degree = ', degree)
+        print('pow_arg = ', pow_arg)
+        print('y = ', y)
         row.append(y)
     z.append(row)
 
@@ -59,6 +61,5 @@ surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
                        linewidth=0, antialiased=False)
 
 plt.show()
-
 
 input('Нажмите любую клавишу')
